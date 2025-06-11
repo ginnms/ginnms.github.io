@@ -1,0 +1,17 @@
+@import "catppuccin-lib.css";
+
+body {
+    color: var(--ctp-mocha-text);
+    background: var(--ctp-mocha-base);
+}
+
+.section-header {
+    padding-top: 50px;
+    padding-bottom: 15px;
+}
+
+.section-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: var(--ctp-mocha-mantle);
+}

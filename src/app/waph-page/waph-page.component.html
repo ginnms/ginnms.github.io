@@ -1,0 +1,16 @@
+<app-navbar title="WAPH Demo">
+  @if (showEmail) {
+  }
+  <button (click)="showEmail = !showEmail" matButton>
+    @if (showEmail) {
+    <p><a href="mailto:ginnms&#64;mail.uc.edu">ginnms&#64;mail.uc.edu</a></p>
+    }
+    @else {
+      <p>Click here to show email.</p>
+    }
+  </button>
+  <br>
+  <div #digitClock></div>
+  <br>
+  <app-clock></app-clock>
+</app-navbar>

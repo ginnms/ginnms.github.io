@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-home-page',
-  imports: [ NavbarComponent, MatButtonModule ],
+  imports: [ NavbarComponent, MatButtonModule, RouterOutlet ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })

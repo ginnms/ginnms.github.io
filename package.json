@@ -4,9 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --output-path dist/ginnms/",
     "watch": "ng build --watch --configuration development",
-    "deploy": "ng build --prod --base-href=/ginnms",
     "test": "ng test",
     "serve:ssr:ginnms.github.io": "node dist/ginnms.github.io/server/server.mjs"
   },

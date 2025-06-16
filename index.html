@@ -1,177 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Milo Ginn - Resume</title>
+        <title></title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+       
+        <script src="js/cookies.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href=https://waph-phung.github.io/style1.css> 
+        <style>
+            .button {
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 5px;
+                text-align: center;
+                text-decoration: none; 
+                display: inline-block;
+                font-size: 12px; 
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            .round {border-radius: 8px;}
+            #response {background-color: #ff9800;} /* Orange */
+        </style>
     </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Milo Ginn</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/headshot.jpg" alt="..." /></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Projects</a></li>
-                </ul>
+    <body>
+        <div class="container">
+            <div id="top">
+                <h1>Web Application Programming and Hacking</h1>
+                <h2>Instructor: Dr. Phu Phung</h2>
             </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        Milo
-                        <span class="text-primary">Ginn</span>
-                    </h1>
-                    <div class="subheading mb-5">
-                         Cincinnati OH, 45221 · (513) 555-8468 ·
-                        <a href="mailto:ginnms@mail.uc.edu">ginnms@mail.uc.edu</a>
-                    </div>
-                    <p class="lead mb-5">I am an aspiring developer enrolled in the Computer Science program at University of Cincinnati. My experience includes web development, mobile app development, and embedded systems development.</p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="https://www.linkedin.com/in/milo-ginn/"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="https://github.com/ginnms"><i class="fab fa-github"></i></a>
-                    </div>
+            <div id="menubar">
+                <nav>
+                    <a href="resume.html">Resume</a>
+                </nav>
+            </div>
+            <div id="main">
+
+               
+            
+                <div id="digit-clock"></div>
+               
+                <script src="js/clock.js"></script>
+               
+                <canvas id="analog-clock" width="150" height="150" styl="background-color:#999"></canvas>
+                <script src="https://waph-phung.github.io/clock.js"></script>
+                <script>
+                   var canvas = document.getElementById("analog-clock");
+                   var ctx = canvas.getContext("2d");
+                   var radius = canvas.height / 2;
+                   ctx.translate(radius, radius);
+                   radius = radius * 0.90
+                   setInterval(drawClock, 1000);
+               
+                   function drawClock() {
+                        drawFace(ctx, radius);
+                        drawNumbers(ctx, radius);
+                        drawTime(ctx, radius);
+                   }
+                </script>
+                <div>
+                        <input name="data" id="data">
+                    <div id="response"></div>
+                    <input class="button round" type="button" value="Guess Age" onclick="guessAge($('#data').val())">
+                    <p>via <a href="https://agify.io">agify.io</a></p>
+                    <script>
+                        async function guessAge(name) {
+                            const response = await fetch("https://api.agify.io/?name="+name);
+                            const result = await response.json();
+                            $("#response").text("Hi " + name + ", your age should be " + result.age);
+                        }
+                    </script> 
                 </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Experience-->
-            <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Computer Science Co-op</h3>
-                            <div class="subheading mb-3">Crown Equipment Corporation</div>
-                            <ul>
-                                <li>Analyzed CAN data to test vehicle systems</li>
-                                <li>Developed internal VBA scripts to streamline the testing and analysis process</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">May 2024 - August 2024</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Computer Science Co-op</h3>
-                            <div class="subheading mb-3">Crown Equipment Corporation</div>
-                            <ul>
-                                <li>Contributed to two new features and several bugfixes for lift truck display systems</li>
-                                <li>Wrote code in C# for a Xamarin Android App, as well as C for embedded systems</li>
-                                <li>Emphasized communication, issue tracking, writing and reviewing pull requests, and following code style guidelines</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">September 2023 - December 2023</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Software Development Intern</h3>
-                            <div class="subheading mb-3">Fidelity Information Services</div>
-                            <ul>
-                                <li>Participated in six project development cycles, developing and presenting proof-of-concept software</li>
-                                <li>Designed and implemented primarily webpages and APIs in Node.js and Python</li>
-                                <li>Took initiative as an informal team lead by assisting in project management and aiding teammates alongside working independently on feature implementation</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2021 - August 2022</span></div>
-                    </div>
+                <div>
+                    <div id="joke"></div>
+                    <p>via <a href="https://v2.jokeapi.dev/">jokeapi.dev</a></p>
+                    <script src="js/joke.js"></script>
                 </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Education-->
-            <section class="resume-section" id="education">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Education</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">University of Cincinnati</h3>
-                            <div class="subheading mb-3">Bachelor of Science</div>
-                            <div>Computer Science</div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2020 - May 2026</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Walnut Hills High School</h3>
-                            <div class="subheading mb-3"></div>
-                            <ul>
-                                <li>AP Computer Science Applications</li>
-                                <li>AP Calculus BC</li>
-                                <li>CCP Engineering Design</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2014 - May 2020</span></div>
-                    </div>
+                <div>
+                    <div id="weather"></div>
+                    <script src="js/weather.js"></script>
+                    <p>via <a href="https://www.weatherbit.io/">weatherbit.io</a></p>
                 </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Skills-->
-            <section class="resume-section" id="skills">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Skills</h2>
-                    <div class="subheading mb-3">Programming Languages & Tools</div>
-                    <ul class="fa-ul mb-0">
-                        <li>Workflow: Source control, Git, Github, Atlassian Suite(Bitbucket, Jira, etc.),
-                                Agile Methodology, Visual Studio, VSCode</li>
-                        <li>Programming Languages: C, C++, C#, .NET, ASP.NET, Java, Node.js, AngularJS, ReactJS, Python
-                                Rust</li>
-                        <li>Presentation: MS Office(Word, Powerpoint, Excel), Technical and Business Presentation</li>
-                        <li>Other: AWS, Docker, UNIX, Bash, Powershell, Android Development, Xamarin, SQL, OpenAPI Specifications</li>
-                    </ul>
-            </section>
-            <hr class="m-0" />
-            <!-- Interests-->
-            <section class="resume-section" id="interests">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Projects</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">EyeSeeYou</h3>
-                            <div class="subheading mb-3">C++, CMake, OpenCV, SDL</div>
-                            <ul>
-                                <li>Built an application using OpenCV to render graphics in relation to face-tracking
-                                        for an art installation</li>
-                                <li>First "large-scale" application after only creating introductory coding applications
-                                        for school</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2021 - August 2022</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">TicTacToe</h3>
-                            <div class="subheading mb-3">Java, JFrame</div>
-                            <ul>
-                                    <li>Adapted an AP computer science assignment to use a GUI rather than the console</li>
-                                    <li>Early example of reading documentation to understand and implement a technology</li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2021 - August 2022</span></div>
-                    </div>
+                <div>
+                    <a href="https://info.flagcounter.com/bTBR"><img src="https://s01.flagcounter.com/count2/bTBR/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
                 </div>
-            </section>
-            <hr class="m-0" />
-        <!-- Bootstrap core JS-->
+            </div> 
+        </div>
+        <!-- Bootstrap core JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
+        <!-- Core theme JS -->
         <script src="js/scripts.js"></script>
     </body>
 </html>

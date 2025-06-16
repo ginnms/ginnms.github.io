@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { NavbarComponent } from '../navbar/navbar.component';
 import { ClockComponent } from '../clock/clock.component';
 
 @Component({
   selector: 'app-waph-page',
-  imports: [ NavbarComponent, MatButtonModule, ClockComponent ],
+  imports: [ MatButtonModule, ClockComponent ],
   templateUrl: './waph-page.component.html',
   styleUrl: './waph-page.component.scss'
 })

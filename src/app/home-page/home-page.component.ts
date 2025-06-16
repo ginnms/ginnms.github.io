@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-home-page',
-  imports: [ NavbarComponent, MatButtonModule, RouterOutlet ],
+  imports: [ MatButtonModule ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })

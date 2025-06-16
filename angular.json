@@ -35,6 +35,7 @@
               "src/styles.scss"
             ],
             "scripts": [],
+            "server": "src/main.server.ts",
           },
           "configurations": {
             "production": {
@@ -50,7 +51,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "appShell": true
             },
             "development": {
               "optimization": false,
@@ -95,6 +97,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

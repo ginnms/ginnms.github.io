@@ -26,7 +26,7 @@ Find both the site and the source code here:
 
 ### Professional Profile
 
-This task was fairly straightforward, I found a bootstrap template which fit my purposes and created a page with all my relevant information under the [About Me]() page.
+This task was fairly straightforward, I found a bootstrap template which fit my purposes and created a page with all my relevant information under the [About Me](https://ginnms.github.io/about.html) page.
 
 ### WAPH Page
 

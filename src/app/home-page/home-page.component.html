@@ -1,9 +1,15 @@
-<div id="top">
-  <h1>Wab Application Programming and Hacking</h1>
-  <h2>Front-end Web Development Lab</h2>
-  <h3>Instructor: Dr, Phu Phung</h3>
-  <br>
-  <h3>Student: Milo Ginn</h3>
-  <img src="headshot.jpg" width="100">
-</div>
-
+<button (click)="showEmail = !showEmail" matButton>
+  @if (showEmail) {
+    <p><a href="mailto:ginnms&#64;mail.uc.edu">ginnms&#64;mail.uc.edu</a></p>
+  }
+  @else {
+    <p>Click here to show email.</p>
+  }
+</button>
+<br>
+<div #digitClock></div>
+<br>
+<app-clock></app-clock>
+<br>
+<p #joke></p>
+<p id="result"></p>

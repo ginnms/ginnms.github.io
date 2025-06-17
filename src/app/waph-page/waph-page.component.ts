@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { ClockComponent } from '../clock/clock.component';
 
 @Component({
   selector: 'app-waph-page',
-  imports: [ MatButtonModule, ClockComponent ],
+  imports: [ MatButtonModule, ],
   templateUrl: './waph-page.component.html',
   styleUrl: './waph-page.component.scss'
 })
